@@ -18,9 +18,10 @@ def turtlePath(path):
     curr_dir = (0,1)
     #max straight line distance from the origin
     max_dist = 0
-    for l in range(2, len(lines)):
+    for l in range(num_obs+1, len(lines)):
         command = lines[l]
         c_type = command[0]
+        # print(c_type)
         if c_type != 'M':
             curr_dir = change_dir(c_type, curr_dir)
         else:
@@ -54,4 +55,5 @@ def collision_block(obs, curr_dir, curr_pos, dist):
 
 
 
+print(turtlePath("turtle_path_orig.txt"))
 print(turtlePath("turtle_path.txt"))
